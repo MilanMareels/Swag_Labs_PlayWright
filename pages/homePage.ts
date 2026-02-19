@@ -2,22 +2,28 @@ import { Page, Locator } from "@playwright/test";
 
 export class HomePage {
   readonly page: Page;
-  readonly addToCartBackpackButton: Locator;
-  readonly removeBackpackButton: Locator;
-  readonly cartIcon: Locator;
-  readonly cartBadge: Locator;
-  readonly sortDropdown: Locator;
-  readonly burgerMenuButton: Locator;
-  readonly logoutLink: Locator;
+  readonly products: Locator;
+  readonly productItem: Locator;
+  readonly hamburguerMenu: Locator;
+  readonly card: Locator;
+  readonly filter: Locator;
+  readonly footer: Locator;
+
+  readonly productNames: Locator;
+  readonly productPrices: Locator;
+  readonly productDescriptions: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.addToCartBackpackButton = page.locator('[data-test="add-to-cart-sauce-labs-backpack"]');
-    this.removeBackpackButton = page.locator('[data-test="remove-sauce-labs-backpack"]');
-    this.cartIcon = page.locator(".shopping_cart_link");
-    this.cartBadge = page.locator(".shopping_cart_badge");
-    this.sortDropdown = page.locator('[data-test="product_sort_container"]');
-    this.burgerMenuButton = page.locator("#react-burger-menu-btn");
-    this.logoutLink = page.locator("#logout_sidebar_link");
+    this.products = page.locator('[data-test="inventory-list"]');
+    this.productItem = page.locator('[data-test="inventory-item"]');
+    this.hamburguerMenu = page.locator("#react-burger-menu-btn");
+    this.card = page.locator("#shopping_cart_container");
+    this.filter = page.locator("[data-test='product-sort-container']");
+    this.footer = page.locator("[data-test='footer']");
+
+    this.productNames = page.locator('[data-test="inventory-item-name"]');
+    this.productPrices = page.locator('[data-test="inventory-item-price"]');
+    this.productDescriptions = page.locator('[data-test="inventory-item-desc"]');
   }
 }
