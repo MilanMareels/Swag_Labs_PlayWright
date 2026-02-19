@@ -1,6 +1,6 @@
 import { LogoutPage } from "../pages/logoutPage";
 
-export class LogoutPageActions {
+export class LogoutActions {
   readonly logoutPage: LogoutPage;
 
   constructor(logoutPage: LogoutPage) {

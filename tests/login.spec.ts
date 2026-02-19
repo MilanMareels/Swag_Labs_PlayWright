@@ -21,8 +21,6 @@ test.describe("Login Page", () => {
   test.beforeEach(async ({ loginPage }) => {
     loginPageActions = new LoginPageActions(loginPage);
     loginPageValidator = new LoginPageValidator(loginPage);
-
-    await loginPageActions.goToLoginPage();
   });
 
   test("Must successfully login with valid standard user credentials and navigate to the inventory page", async () => {
@@ -74,6 +72,7 @@ test.describe("Login Page", () => {
   });
 
   test("Must show error message when login with no credentials", async () => {
+    await loginPageActions.gotToLoginPage();
     await loginPageActions.clickLoginButton();
 
     await loginPageValidator.checkErrorMessageAfterBadLogin("Epic sadface: Username is required");

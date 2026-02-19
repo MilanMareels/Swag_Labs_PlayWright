@@ -13,7 +13,6 @@ test.describe("Home Page - Layout & Products Content", () => {
     loginPageActions = new LoginPageActions(loginPage);
     homePageValidator = new HomePageValidator(homePage);
 
-    await loginPageActions.goToLoginPage();
     await loginPageActions.login(STANDARD_USER, VALID_PASSWORD);
   });
 
