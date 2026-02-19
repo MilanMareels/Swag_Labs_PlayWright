@@ -4,7 +4,7 @@ import { HomePageActions } from "../actions/homePage.actions";
 import { CartPageActions } from "../actions/cartPage.actions";
 import { CartPageValidator } from "../validators/cartPage.validator";
 
-test.describe("Winkelwagen Pagina", () => {
+test.describe("Cart Page", () => {
   let loginPageActions: LoginPageActions;
   let homePageActions: HomePageActions;
   let cartPageActions: CartPageActions;

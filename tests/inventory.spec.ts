@@ -4,7 +4,7 @@ import { HomePageActions } from "../actions/homePage.actions";
 import { HomePageValidator } from "../validators/homePage.validator";
 import { LoginPageValidator } from "../validators/loginPage.validator";
 
-test.describe("Inventory Pagina Functionaliteit", () => {
+test.describe("Inventory Page", () => {
   let loginPageActions: LoginPageActions;
   let homePageActions: HomePageActions;
   let homePageValidator: HomePageValidator;

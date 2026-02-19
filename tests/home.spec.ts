@@ -6,7 +6,7 @@ import { HomePageValidator } from "../validators/homePage.validator";
 const STANDARD_USER = "standard_user";
 const VALID_PASSWORD = "secret_sauce";
 
-test.describe("Home Page & Winkelwagen", () => {
+test.describe("Home Page", () => {
   let loginPageActions: LoginPageActions;
   let homePageActions: HomePageActions;
   let homePageValidator: HomePageValidator;

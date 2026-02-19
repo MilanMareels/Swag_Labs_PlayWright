@@ -8,7 +8,7 @@ const VALID_PASSWORD = "secret_sauce";
 const INVALID_USER = "Test_123";
 const INVALID_PASSWORD = "Test_123";
 
-test.describe("Login Page Functionaliteit", () => {
+test.describe("Login Page", () => {
   let loginPageActions: LoginPageActions;
   let loginPageValidator: LoginPageValidator;
 

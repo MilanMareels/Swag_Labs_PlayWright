@@ -5,7 +5,7 @@ import { CheckoutPageActions } from "../actions/checkoutPage.actions";
 import { CheckoutPageValidator } from "../validators/checkoutPage.validator";
 import { CartPageActions } from "../actions/cartPage.actions";
 
-test.describe("Checkout Pagina - Alle Paden", () => {
+test.describe("Checkout Page", () => {
   let checkoutPageActions: CheckoutPageActions;
   let checkoutPageValidator: CheckoutPageValidator;
 
@@ -24,23 +24,23 @@ test.describe("Checkout Pagina - Alle Paden", () => {
     await cartPageActions.proceedToCheckout();
   });
 
-  test("HAPPY PATH: Succesvol afrekenen", async () => {
+  test("Successful checkout", async () => {
     await checkoutPageActions.fillCustomerInformation("Test", "Automator", "1234");
     await checkoutPageActions.finishOrder();
     await checkoutPageValidator.checkOrderCompletedSuccessfully();
   });
 
-  test("UNHAPPY PATH: Foutmelding bij missende voornaam", async () => {
+  test("Error message for missing first name", async () => {
     await checkoutPageActions.fillCustomerInformation("", "Automator", "1234");
     await checkoutPageValidator.checkErrorMessage("Error: First Name is required");
   });
 
-  test("UNHAPPY PATH: Foutmelding bij missende achternaam", async () => {
+  test("Error message for missing last name", async () => {
     await checkoutPageActions.fillCustomerInformation("Test", "", "1234");
     await checkoutPageValidator.checkErrorMessage("Error: Last Name is required");
   });
 
-  test("UNHAPPY PATH: Foutmelding bij missende postcode", async () => {
+  test("Error message for missing postal code", async () => {
     await checkoutPageActions.fillCustomerInformation("Test", "Automator", "");
     await checkoutPageValidator.checkErrorMessage("Error: Postal Code is required");
   });
