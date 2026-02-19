@@ -12,6 +12,6 @@ export class LoginPage {
     this.userNameInput = page.locator("#user-name");
     this.passwordInput = page.locator("#password");
     this.loginButton = page.locator("#login-button");
-    this.errorMessage = page.getByText("Epic sadface: Username and password do not match any user in this service");
+    this.errorMessage = page.locator('[data-test="error"]');
   }
 }
